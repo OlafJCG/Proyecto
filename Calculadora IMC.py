@@ -1,56 +1,92 @@
-# Este programa calcula el Índice de masa corporal de una persona y arroja una leyenda dependiendo los datos de la persona.
+"""
+            Este programa calcula el Índice de masa corporal de 
+            una persona y arroja una leyenda dependiendo los datos de la persona.
+"""
 
-# En nombre y apellidos, hay que validar que sean solo letras.
-
-
-
+# NOMBRE
 nombre = str(input("Escribe tu nombre: "))
 # Bucle While para no dejar una variable vacia.
 while nombre == "":
     nombre = str(input("No escribiste nada, por favor Escribe tu nombre: "))
 
+# APELLIDO PATERNO
+apellido_Pat = str(input("Escribe tu Apellido Paterno: "))
+# Bucle While para no dejar una variable vacia.
+while apellido_Pat == "":
+    apellido_Pat = str(input("No escribiste nada, por favor Escribe tu Apellido Paterno: "))
 
-        # if not nombre:
-        #     print("No escribiste")
-#     else:
-#         print(nombre)
-# print ("ok")
+# APELLIDO MATERNO
+apellido_Mat = str(input("Escribe tu Apellido Materno: "))
+# Bucle While para no dejar una variable vacia.
+while apellido_Mat == "":
+    apellido_Mat = str(input("No escribiste nada, por favor Escribe tu Apellido Materno: "))
 
+# EDAD
+#  "While True" es para especificar un bucle infinito y para romperlo utilicé "continue" y "break" para romper el bucle
+while True:
+    # "try" y "except" se utilizan para anticipar errores y en este caso lo usaré para anticipar un dato que no sea un número (una letra)
+    try:
+        edad = int(input("Escribe tu edad: "))   
+    except (ValueError):
+        print("Escribiste una letra o algún valor que no es valido")
+        continue
 
-# Capellido_paterno = input("Escribe tu apellido paterno: ")
+    if edad < 0:
+        print("Escribiste un valor negativo")
+        continue
+    else:
+        break
 
-# apellido_materno = input("Escribe tu apellido materno: ")
+# PESO
+#  "While True" es para especificar un bucle infinito y para romperlo utilicé "continue" y "break" para romper el bucle
+while True:
+    # "try" y "except" se utilizan para anticipar errores y en este caso lo usaré para anticipar un dato que no sea un número (una letra)
+    try:
+        peso = float(input("Escribe tu peso: "))     
+    except (ValueError):
+        print("Escribiste una letra o algún valor que no es valido")
+        continue
 
-# edad = int(input("Teclea tu edad: "))
+    if peso < 0:
+        print("Escribiste un valor negativo")
+        continue
+    else:
+        break
 
-# peso = float(input("Teclea tu peso en Kilos: "))
+# ESTATURA
+#  "While True" es para especificar un bucle infinito y para romperlo utilicé "continue" y "break" para romper el bucle
+while True:
+    # "try" y "except" se utilizan para anticipar errores y en este caso lo usaré para anticipar un dato que no sea un número (una letra)
+    try:
+        estatura = float(input("Escribe tu estatura en numero decimal, por ejemplo 1.98m \n"))     
+    except (ValueError):
+        print("Escribiste una letra o algún valor que no es valido")
+        continue
 
-# estatura = float(input("Teclea tu estatura en metros: "))
+    if estatura < 0:
+        print("Escribiste un valor negativo")
+        continue
+    else:
+        break
 
-# imc = peso / (estatura ** 2)
+imc = peso / (estatura ** 2)
 
-
+if imc < 18.9:
+    resultado = "Peso Bajo"
+elif (imc >18.91) and (imc < 24.99):
+    resultado = "Peso Normal"
+elif (imc > 25.00) and (imc < 29.99):
+    resultado = "Sobrepeso"
+elif (imc > 30.00) and (imc < 34.99):
+    resultado =  "Obesidad Leve"
+elif (imc > 35.00) and (imc < 39.99):
+    resultado = "Obesidad media"
+elif (imc > 40):
+    resultado = "Obesidad Mórbida"
+     
 # Impresión de datos usando el metodo "upper"
-print("Nombre: ", nombre.upper())
-# print(imc)
+print("Hola ", nombre.upper(), " ", apellido_Pat.upper(), " ", apellido_Mat.upper(),"\n")
+print("Tu Índice de Masa Corporal es de: ", round(imc, 2))
+print("Por lo tanto tienes: ", '\033[1m' + resultado + '\033[0m')
 
 
-
-# cadena = "1"
-# # Comprobar con la forma idiomática
-# if not cadena:
-# 	print("La cadena está vacía")
-# else:
-# 	print("La cadena NO está vacía")
-
-# # O contar sus caracteres
-# if len(cadena) is 0:
-# 	print("La cadena está vacía")
-# else:
-# 	print("La cadena NO está vacía")
-
-# # Lo contrario de hace un momento:
-# if cadena:
-# 	print("Ok la cadena no está vacía")
-# else:
-# 	print("La cadena está vacía")
