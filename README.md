@@ -32,3 +32,8 @@
         continue
     else:
         break
+	
+
+# Mi reflexión del curso
+## Me ha agradado el curso, el couch no ha tenido problema en resolver las dudas de los compañeros.
+>##### Un comentario a mejorar sería una mejor atención a los detalles cómo el que sucedió con los que no nos había llegado nuestras claves de acceso.
